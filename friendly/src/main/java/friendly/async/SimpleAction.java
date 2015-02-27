@@ -1,4 +1,4 @@
-package xyz.gwh.android.lib.friendly.async;
+package friendly.async;
 
 /**
  * A simpler Action with only the doAction() method available.

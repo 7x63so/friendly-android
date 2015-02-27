@@ -1,1 +1,1 @@
-include ':app', ':friendly'
+include ':friendly', ':sample'

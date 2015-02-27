@@ -1,4 +1,4 @@
-package xyz.gwh.android.lib.friendly.async;
+package friendly.async;
 
 /**
  * Represents an action to be performed.

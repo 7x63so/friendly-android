@@ -1,4 +1,4 @@
-package xyz.gwh.android.lib.friendly;
+package friendly;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

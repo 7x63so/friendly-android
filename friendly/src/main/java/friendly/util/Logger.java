@@ -1,4 +1,4 @@
-package xyz.gwh.android.lib.friendly.util;
+package friendly.util;
 
 import android.util.Log;
 

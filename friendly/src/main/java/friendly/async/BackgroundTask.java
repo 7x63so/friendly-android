@@ -1,4 +1,4 @@
-package xyz.gwh.android.lib.friendly.async;
+package friendly.async;
 
 import android.os.AsyncTask;
 import android.os.Handler;
