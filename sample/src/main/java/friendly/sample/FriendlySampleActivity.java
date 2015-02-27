@@ -1,9 +1,11 @@
 package friendly.sample;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
+
+import friendly.async.Action;
+import friendly.async.BackgroundTask;
+import friendly.util.Logger;
 
 
 public class FriendlySampleActivity extends ActionBarActivity {
@@ -12,28 +14,38 @@ public class FriendlySampleActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sayHello();
+        numberCrunch();
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    private void sayHello() {
+        Logger.i("Hello world!");
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    private void numberCrunch() {
+        new BackgroundTask().run(new Action() {
+            @Override
+            public void before() {
+                Logger.i("Preparing to crunch some numbers...");
+            }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+            @Override
+            public void doAction() {
+                Logger.i("Crunching... ");
 
-        return super.onOptionsItemSelected(item);
+                int result = 1;
+                for (int i = 0; i < 10; i++) {
+                    result += result;
+                }
+
+                Logger.i("Result: " + result);
+            }
+
+            @Override
+            public void after() {
+                Logger.i("Finished!");
+            }
+        });
     }
 }
