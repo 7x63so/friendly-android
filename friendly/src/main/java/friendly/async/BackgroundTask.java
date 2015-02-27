@@ -5,13 +5,9 @@ import android.os.Handler;
 
 /**
  * A friendlier wrapper for android.os.AsyncTask.
- * Each BackgroundTask method is bound to its equivalent in AsyncTask's execute().
+ * Each Action method is bound to its equivalent in AsyncTask's execute().
  */
 public final class BackgroundTask {
-
-    public BackgroundTask() {
-
-    }
 
     /**
      * Runs the Action in a background thread.
