@@ -36,8 +36,8 @@ public class FriendlySampleFragment extends FriendlyFragment {
 
     @Override
     protected void registerCallbacks() {
-        arrivingCallback = bindCallback(ArrivingCallback.class);
-        leavingCallback = bindCallback(LeavingCallback.class);
+        arrivingCallback = registerCallback(ArrivingCallback.class);
+        leavingCallback = registerCallback(LeavingCallback.class);
     }
 
     @Override

@@ -83,7 +83,7 @@ public abstract class FriendlyFragment extends Fragment {
      * Returns an instance of the FragmentActivity that has been cast to the given class type.
      */
     @Nullable
-    protected final <T> T bindCallback(Class<T> clazz) {
+    protected final <T> T registerCallback(Class<T> clazz) {
         if (!isAdded()) {
             throw new IllegalStateException("You can't add a callback before the Fragment has attached to the Activity.");
         }
