@@ -1,6 +1,8 @@
 package friendly.sample;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 
 import friendly.async.Action;
@@ -8,22 +10,31 @@ import friendly.async.BackgroundTask;
 import friendly.util.Logger;
 
 
-public class FriendlySampleActivity extends ActionBarActivity {
+public class FriendlySampleActivity extends ActionBarActivity implements FriendlySampleFragment.ArrivingCallback, FriendlySampleFragment.LeavingCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sayHello();
-        numberCrunch();
+        doSomethingInBackground();
+        showFragment(FriendlySampleFragment.newInstance(), false);
     }
 
-    private void sayHello() {
-        Logger.i("Hello world!");
+    @Override
+    public void sayHello() {
+        Logger.i("Hi there");
     }
 
-    private void numberCrunch() {
+    @Override
+    public void sayGoodbye() {
+        Logger.i("See ya");
+    }
+
+    /**
+     * Crunches some numbers on a background thread.
+     */
+    private void doSomethingInBackground() {
         new BackgroundTask().run(new Action() {
             @Override
             public void before() {
@@ -47,5 +58,17 @@ public class FriendlySampleActivity extends ActionBarActivity {
                 Logger.i("Finished!");
             }
         });
+    }
+
+    /**
+     * Shows a... fragment.
+     */
+    private void showFragment(Fragment fragment, boolean addToBackStack) {
+        final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container, fragment, fragment.getClass().getSimpleName());
+        if (addToBackStack) {
+            ft.addToBackStack(null);
+        }
+        ft.commit();
     }
 }
