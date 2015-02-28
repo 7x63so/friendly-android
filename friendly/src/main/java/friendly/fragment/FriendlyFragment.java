@@ -67,7 +67,7 @@ public abstract class FriendlyFragment extends Fragment {
      * Optimistic wrapper for view.findViewById().
      */
     @SuppressWarnings("unchecked")
-    protected final <T extends View> T grabView(int id) {
+    protected final <T extends View> T bindView(int id) {
         return (T) layout.findViewById(id);
     }
 

@@ -42,7 +42,7 @@ public class FriendlySampleFragment extends FriendlyFragment {
 
     @Override
     protected void bindViews() {
-        sampleText = grabView(R.id.sample_text);
+        sampleText = bindView(R.id.sample_text);
     }
 
     @Override
