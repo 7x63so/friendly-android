@@ -35,7 +35,7 @@ public class FriendlySampleFragment extends FriendlyFragment {
     }
 
     @Override
-    protected void bindCallbacks() {
+    protected void registerCallbacks() {
         arrivingCallback = bindCallback(ArrivingCallback.class);
         leavingCallback = bindCallback(LeavingCallback.class);
     }
@@ -55,6 +55,12 @@ public class FriendlySampleFragment extends FriendlyFragment {
 
     @Override
     protected View layout(LayoutInflater inflater) {
-        return inflater.inflate(R.layout.fragment_test, null);
+        return inflater.inflate(R.layout.fragment_sample, null);
+    }
+
+    @Override
+    protected void unregisterCallbacks() {
+        arrivingCallback = null;
+        leavingCallback = null;
     }
 }

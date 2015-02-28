@@ -26,7 +26,7 @@ public abstract class FriendlyFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        bindCallbacks();
+        registerCallbacks();
         bindViews();
         initialize();
     }
@@ -34,6 +34,7 @@ public abstract class FriendlyFragment extends Fragment {
     @Override
     public void onDestroyView() {
         layout = null;
+        unregisterCallbacks();
         super.onDestroyView();
     }
 
@@ -45,7 +46,7 @@ public abstract class FriendlyFragment extends Fragment {
     /**
      * Just a friendly suggestion.
      */
-    protected void bindCallbacks() {
+    protected void registerCallbacks() {
         // available for hire
     }
 
@@ -60,6 +61,13 @@ public abstract class FriendlyFragment extends Fragment {
      * Just a friendly suggestion.
      */
     protected void initialize() {
+        // available for hire
+    }
+
+    /**
+     * Just a friendly suggestion.
+     */
+    protected void unregisterCallbacks() {
         // available for hire
     }
 
