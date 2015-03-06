@@ -39,7 +39,7 @@ public abstract class FriendlyFragment extends Fragment {
     }
 
     /**
-     * Returns the inflated layout to be set in onCreateView().
+     * Returns the inflated layout to be returned in onCreateView().
      */
     protected abstract View layout(LayoutInflater inflater);
 
@@ -80,7 +80,16 @@ public abstract class FriendlyFragment extends Fragment {
     }
 
     /**
-     * Returns an instance of the FragmentActivity that has been cast to the given class type.
+     * Calls bindView() and sets the given OnClickListener on the result.
+     */
+    protected final <T extends View> T bindViewWithAction(int id, View.OnClickListener listener) {
+        final T view = bindView(id);
+        view.setOnClickListener(listener);
+        return view;
+    }
+
+    /**
+     * Returns the FragmentActivity cast to the given type.
      */
     @Nullable
     protected final <T> T registerCallback(Class<T> clazz) {

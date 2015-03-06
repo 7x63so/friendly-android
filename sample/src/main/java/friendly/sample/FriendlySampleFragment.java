@@ -2,6 +2,7 @@ package friendly.sample;
 
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import friendly.fragment.FragmentCallback;
@@ -28,7 +29,9 @@ public class FriendlySampleFragment extends FriendlyFragment {
 
     private ArrivingCallback arrivingCallback;
     private LeavingCallback leavingCallback;
+
     private TextView sampleText;
+    private Button sampleButton;
 
     public static FriendlySampleFragment newInstance() {
         return new FriendlySampleFragment();
@@ -43,6 +46,12 @@ public class FriendlySampleFragment extends FriendlyFragment {
     @Override
     protected void bindViews() {
         sampleText = bindView(R.id.sample_text);
+        sampleButton = bindViewWithAction(R.id.sample_btn, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sampleButton.setText("You clicked me!");
+            }
+        });
     }
 
     @Override
