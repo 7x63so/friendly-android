@@ -51,7 +51,7 @@ public final class BackgroundTask {
      * Executes an AsyncTask and calls back to the Action
      * methods at each step of the execution.
      */
-    private void runInBackground(final Action action, int delay) {
+    protected void runInBackground(final Action action, int delay) {
         final Handler handler = new Handler();
         final Runnable runnable = new Runnable() {
             @Override
