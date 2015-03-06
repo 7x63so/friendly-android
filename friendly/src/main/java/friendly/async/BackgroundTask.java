@@ -24,17 +24,27 @@ public final class BackgroundTask {
     }
 
     /**
-     * Runs the SimpleAction in a background thread.
+     * Runs the Runnable in a background thread.
      */
-    public void run(final SimpleAction action) {
-        runInBackground(action, 0);
+    public void run(final Runnable runnable) {
+        runInBackground(new Action() {
+            @Override
+            public void doAction() {
+                runnable.run();
+            }
+        }, 0);
     }
 
     /**
-     * Runs the SimpleAction in a background thread after the given delay.
+     * Runs the Runnable in a background thread after the given delay.
      */
-    public void run(final SimpleAction action, int delay) {
-        runInBackground(action, delay);
+    public void run(final Runnable runnable, int delay) {
+        runInBackground(new Action() {
+            @Override
+            public void doAction() {
+                runnable.run();
+            }
+        }, delay);
     }
 
     /**
