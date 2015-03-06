@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import friendly.fragment.FragmentCallback;
 import friendly.fragment.FriendlyFragment;
 
 /**
@@ -13,14 +12,14 @@ import friendly.fragment.FriendlyFragment;
  */
 public class FriendlySampleFragment extends FriendlyFragment {
 
-    public interface ArrivingCallback extends FragmentCallback {
+    public interface ArrivingCallback {
         /**
          * Prints a message to the console.
          */
         public void sayHello();
     }
 
-    public interface LeavingCallback extends FragmentCallback {
+    public interface LeavingCallback {
         /**
          * Prints a message to the console.
          */
