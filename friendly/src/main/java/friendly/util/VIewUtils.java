@@ -26,9 +26,7 @@ public final class ViewUtils {
      */
     public static void makeInvisible(@NonNull View... views) {
         for (View view : views) {
-            if (view != null) {
-                view.setVisibility(View.INVISIBLE);
-            }
+            view.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -37,9 +35,7 @@ public final class ViewUtils {
      */
     public static void makeGone(@NonNull View... views) {
         for (View view : views) {
-            if (view != null) {
-                view.setVisibility(View.GONE);
-            }
+            view.setVisibility(View.GONE);
         }
     }
 }
