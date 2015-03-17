@@ -23,7 +23,7 @@ public abstract class BackgroundTask {
     public void run(final Runnable runnable) {
         runInBackground(new Action() {
             @Override
-            public void doAction() {
+            public void perform() {
                 runnable.run();
             }
         }, 0);
@@ -32,7 +32,7 @@ public abstract class BackgroundTask {
     public void run(final Runnable runnable, int delay) {
         runInBackground(new Action() {
             @Override
-            public void doAction() {
+            public void perform() {
                 runnable.run();
             }
         }, delay);

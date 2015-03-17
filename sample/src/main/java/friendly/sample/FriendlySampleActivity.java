@@ -42,7 +42,7 @@ public class FriendlySampleActivity extends ActionBarActivity implements Friendl
             }
 
             @Override
-            public void doAction() {
+            public void perform() {
                 Logger.i("Crunching... ");
 
                 int result = 1;

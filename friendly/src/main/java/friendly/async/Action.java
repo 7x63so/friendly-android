@@ -5,7 +5,7 @@ package friendly.async;
  */
 public abstract class Action {
 
-    public abstract void doAction();
+    public abstract void perform();
 
     public void before() {
         // available for hire

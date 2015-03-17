@@ -32,7 +32,7 @@ public final class SimpleAsyncTask extends BackgroundTask implements BackgroundT
 
             @Override
             protected Void doInBackground(Void... params) {
-                action.doAction();
+                action.perform();
                 return null;
             }
 
