@@ -5,6 +5,13 @@ package friendly.async;
  */
 public abstract class BackgroundTask {
 
+    protected interface Cancelable {
+        /**
+         * Cancels the task, running or not.
+         */
+        public void cancel();
+    }
+
     public void run(final Action action) {
         runInBackground(action, 0);
     }
