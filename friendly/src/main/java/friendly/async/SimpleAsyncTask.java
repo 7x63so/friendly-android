@@ -18,7 +18,7 @@ public final class SimpleAsyncTask extends BackgroundTask implements BackgroundT
         this(false);
     }
 
-    public SimpleAsyncTask(boolean runInParallelRename) {
+    public SimpleAsyncTask(boolean runInParallel) {
         executor = runInParallel ? AsyncTask.THREAD_POOL_EXECUTOR : AsyncTask.SERIAL_EXECUTOR;
     }
 
