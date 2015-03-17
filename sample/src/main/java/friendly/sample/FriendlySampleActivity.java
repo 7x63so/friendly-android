@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 
 import friendly.async.Action;
-import friendly.async.BackgroundTask;
+import friendly.async.SimpleAsyncTask;
 import friendly.util.Logger;
 
 
@@ -35,7 +35,7 @@ public class FriendlySampleActivity extends ActionBarActivity implements Friendl
      * Crunches some numbers on a background thread.
      */
     private void doSomethingInBackground() {
-        new BackgroundTask().run(new Action() {
+        new SimpleAsyncTask().run(new Action() {
             @Override
             public void before() {
                 Logger.i("Preparing to crunch some numbers...");

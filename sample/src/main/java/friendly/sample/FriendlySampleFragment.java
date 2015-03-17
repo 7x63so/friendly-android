@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import friendly.fragment.FriendlyFragment;
+import friendly.util.ViewUtils;
 
 /**
  * A sample fragment to demo features in FriendlyFragment.
@@ -48,7 +49,7 @@ public class FriendlySampleFragment extends FriendlyFragment {
         sampleButton = bindViewWithAction(R.id.sample_btn, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sampleButton.setText("You clicked me!");
+                ViewUtils.makeInvisible(sampleText);
             }
         });
     }
