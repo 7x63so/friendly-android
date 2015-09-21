@@ -89,6 +89,7 @@ public final class Logger {
                 break;
             case Log.ERROR:
                 Log.e(tag, msg);
+                break;
             default:
                 Log.d(tag, msg);
                 break;
